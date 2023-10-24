@@ -1,7 +1,8 @@
+import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 
-let exchangeRates = {
+const moneda = {
   MXN: {
     MXN: 1,
     USD: 0.055,
@@ -62,7 +63,7 @@ function App() {
   const [convertedAmount, setResult] = useState(0);
 
   const Convert = () => {
-    const rate = exchangeRates[fromCurrency][toCurrency];
+    const rate = moneda[fromCurrency][toCurrency];
     setResult((amount * rate).toFixed(2));
   };
 
@@ -70,31 +71,28 @@ function App() {
     <div>
       <h1>Calculadora de Divisas</h1>
       <h2>Ingrese cantidad</h2>
-      <input type="number" value={amount} 
-      onChange={(e) => {setAmount(e.target.value)}}/>
+      <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="1"/>
+      <div className="de">
+        <h2>De:</h2>
+        <select value={fromCurrency} onChange={(e) =>{setFromCurrency(e.target.value)}}>
+             {currencyOptions.map((currency) => (
+               <option key={currency} value={currency}>
+                 {currency}
+               </option>
+             ))}
+           </select>
+      </div>
 
-        <div>
-          <h2>De:</h2>
-          <select value={fromCurrency} onChange={(e) =>{setFromCurrency(e.target.value)}}>
-               {currencyOptions.map((currency) => (
-                 <option key={currency} value={currency}>
-                   {currency}
-                 </option>
-               ))}
-             </select>
-        </div>
-
-      
-        <div>
-          <h2>a:</h2>
-          <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
-            {currencyOptions.map((currency) => (
-              <option key={currency} value={currency}>
-                {currency}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div className='a'>
+        <h2>a:</h2>
+        <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)}>
+          {currencyOptions.map((currency) => (
+            <option key={currency} value={currency}>
+              {currency}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <button onClick={Convert}>Convertir</button>
 
