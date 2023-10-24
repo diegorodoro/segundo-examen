@@ -3,54 +3,13 @@ import './App.css';
 import React, { useState } from 'react';
 
 const moneda = {
-  MXN: {
-    MXN: 1,
-    USD: 0.055,
-    EUR: 0.052,
-    BTC: 0.0000016,
-    ETH: 0.00003,
-    DOGE: 0.828203,
-    },
-  USD:{
-    USD:1,
-    MXN: 18.26,
-    EUR: 0.95,
-    BTC: 0.000029,
-    ETH: 0.00057,
-    DOGE: 15.2157,
-  },
-  EUR: {
-    EUR:1,
-    MXN: 19.34,
-    USD: 1.0587,
-    BTC: 0.00003139,
-    ETH: 0.000598,
-    DOGE: 16.1074,
-  },
-  BTC: {
-    BTC:1,
-    MXN: 615300.83,
-    USD: 33666.63,
-    EUR: 31801.55,
-    ETH: 19.0435,
-    DOGE: 512301.82,
-  },
+  MXN: {MXN: 1,USD: 0.055,EUR: 0.052,BTC: 0.0000016,ETH: 0.00003,DOGE: 0.828203},
+  USD:{ USD:1,MXN: 18.26,EUR: 0.95,BTC: 0.000029,ETH: 0.00057,DOGE: 15.2157},
+  EUR: {EUR:1,MXN: 19.34,USD: 1.0587,BTC: 0.00003139,ETH: 0.000598,DOGE: 16.1074},
+  BTC: {BTC:1,MXN: 615300.83,USD: 33666.63,EUR: 31801.55,ETH: 19.0435,DOGE: 512301.82},
   ETH: {
-    ETH:1,
-    MXN: 32274.94,
-    USD: 1766.18,
-    EUR: 1669.12,
-    BTC: 0.05251,
-    DOGE: 26909.31,
-  },
-  DOGE: {
-    DOGE:1,
-    MXN: 1.19,
-    USD: 0.0656,
-    EUR: 0.0619,
-    BTC: 0.000001954,
-    ETH: 0.00003723,
-  },
+  ETH:1,  MXN: 32274.94,  USD: 1766.18, EUR: 1669.12,  BTC: 0.05251, DOGE: 26909.31},
+  DOGE: {DOGE:1,MXN: 1.19,USD: 0.0656,EUR: 0.0619,BTC: 0.000001954,ETH: 0.00003723}
 };
 
 
